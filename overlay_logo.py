@@ -157,7 +157,6 @@ while True:
             continue0_1 = False
     if continue0_1:
         active_logo = PIL.Image.open(active_logo_path)
-        print(active_logo.mode)
         break
 
 # Location Selection
