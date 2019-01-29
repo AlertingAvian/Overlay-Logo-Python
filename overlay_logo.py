@@ -157,6 +157,9 @@ while True:
             continue0_1 = False
     if continue0_1:
         active_logo = PIL.Image.open(active_logo_path)
+        if active_logo.mode != "RGBA":
+            print("Logos must have transparency. Stopping...")
+            sys.exit()
         break
 
 # Location Selection
