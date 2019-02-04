@@ -205,7 +205,7 @@ if active_location == 4:
 print("Operation Complete.")
 
 """
-Copyright 2018 Patrick Maloney
+Copyright 2019 Patrick Maloney
 
   This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
