@@ -1,7 +1,7 @@
 # Overlay-Logo-Python
 A Python program to add a logo file to a picture.
 
-Copyright 2018 Patrick Maloney
+Copyright 2019 Patrick Maloney
 
   This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
