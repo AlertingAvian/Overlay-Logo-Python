@@ -2,6 +2,10 @@
 A Python program to add a logo file to a picture.
 
 - [x] Added a GUI
+- [ ] Fix image loading [issue](https://github.com/AlertingAvian/Overlay-Logo-Python/issues/2)
+- [ ] Make the image adding async
+
+### Read the wiki for information
 
 Copyright (C) 2019 Patrick Maloney
 
