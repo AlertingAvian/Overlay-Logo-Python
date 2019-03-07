@@ -169,10 +169,13 @@ def start():
     else:
         pl_product_path = Path(product_path)
         if product_path_old != pl_product_path:
+            product_files.clear()
             for file in pl_product_path.iterdir():
                 if file.suffix == '.png' or file.suffix == '.jpg':
                     product_files.append(file)
             product_path_old = pl_product_path
+        else:
+            pt.notice("Image files will not be loaded, as the path has not changed")
         if len(product_files) == 0:
             pt.warn("Path contained no images.")
             messagebox.showwarning("Warning","Product path contained no images.")
