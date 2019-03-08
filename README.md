@@ -7,6 +7,8 @@ A Python program to add a logo file to a picture.
 
 ### Read the [wiki](https://github.com/AlertingAvian/Overlay-Logo-Python/wiki) for information
 
+I know this isn't very good code, deal with it.
+
 Copyright (C) 2019 Patrick Maloney
 
   This program is free software: you can redistribute it and/or modify
