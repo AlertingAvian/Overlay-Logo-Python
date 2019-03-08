@@ -16,7 +16,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import tkinter as tki
 from tkinter import filedialog, messagebox
 from pathlib import Path
-from pathlib import PurePath
 import PIL.Image
 import time
 import PrintTags as pt
