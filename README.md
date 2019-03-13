@@ -1,5 +1,5 @@
 # Overlay-Logo-Python
-A Python program to add a logo file to a picture.
+A Python program for Windows (10 only I think) to add a logo file to a picture.
 
 - [x] Added a GUI
 - [x] Fix image loading [issue](https://github.com/AlertingAvian/Overlay-Logo-Python/issues/2)
