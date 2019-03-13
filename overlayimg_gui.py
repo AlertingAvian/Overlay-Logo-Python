@@ -16,11 +16,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import tkinter as tki
 from tkinter import filedialog, messagebox
 from pathlib import Path
-from pathlib import PurePath
 import PIL.Image
 import time
 import PrintTags as pt
-
 
 
 # Init Vars
@@ -31,20 +29,27 @@ product_path_old = None
 modified_path = None
 
 root = tki.Tk()
+top = tki.Toplevel()
+top.withdraw()
 root.title("Logo Overlayer")
-root.geometry("600x125")
+root.geometry("600x120")
 root.resizable(width=True,height=False)
 
-# Path selection functions
 
+# Path selection functions
 def choose_logo():
     global logo_file
     logo_file = filedialog.askopenfilename(initialdir=".",title="Select Logo",filetypes=(("png files","*.png"),("all files","*.*")))
     if len(logo_file) == 0:
         pt.warn("No file selected.")
         return
+    if Path(logo_file).suffix != '.png':
+        messagebox.showwarning("Wrong Filetype","Logos must be a .png filetype")
+        pt.warn("Wrong filetype")
+        return
     logo_label.config(text=str(logo_file))
     pt.info("Selected: " + logo_file)
+
 
 def choose_product_path():
     global product_path
@@ -55,6 +60,7 @@ def choose_product_path():
     product_label.config(text=str(product_path))
     pt.info("Selected: " + product_path)
 
+
 def choose_modified_path():
     global modified_path
     modified_path = filedialog.askdirectory(initialdir=".",title="Select Folder To Save Images")
@@ -64,7 +70,8 @@ def choose_modified_path():
     modified_label.config(text=str(modified_path))
     pt.info("Selected: " + modified_path)
 
-""" START: IMAGE PASTING """
+
+''' START: IMAGE PASTING '''
 def add_logo_tl():
     global logo_file, modified_path, product_files
     logo = PIL.Image.open(logo_file)
@@ -141,13 +148,21 @@ def add_logo_br():
     messagebox.showinfo("Complete","Images saved")
 
 
-""" END IMAGE PASTING """
+''' END IMAGE PASTING '''
+
+
+def stop_top():
+    top.withdraw()
+    load_bn['state'] = 'normal'
+
+def bad_top_stop():
+    messagebox.showwarning("Warning","Don't use the \"X\" button, press the \"DONE\" button.")
+
 
 def ask_loc():
-    top = tki.Toplevel()
     top.title("Select a postition")
     top.resizable(width=False,height=False)
-    top.geometry("165x100+400+400")
+    top.geometry("165x90+400+400")
     tl_bn = tki.Button(top,text="Top Left",command=add_logo_tl)
     tl_bn.grid(row=0,column=0)
     bl_bn = tki.Button(top,text="Bottom Left",command=add_logo_bl)
@@ -156,8 +171,11 @@ def ask_loc():
     tr_bn.grid(row=0,column=1)
     br_bn = tki.Button(top,text="Bottom Right",command=add_logo_br)
     br_bn.grid(row=1,column=1)
-    done_bn = tki.Button(top,text="DONE",command=top.destroy)
+    done_bn = tki.Button(top,text="DONE",command=stop_top)
     done_bn.grid(row=2,column=0,columnspan=2)
+    top.protocol("WM_DELETE_WINDOW",bad_top_stop)
+    top.update()
+    top.deiconify()
 
 
 def start():
@@ -173,6 +191,7 @@ def start():
             for file in pl_product_path.iterdir():
                 if file.suffix == '.png' or file.suffix == '.jpg':
                     product_files.append(file)
+            print(product_files)
             product_path_old = pl_product_path
         else:
             pt.notice("Image files will not be loaded, as the path has not changed")
@@ -181,8 +200,9 @@ def start():
             messagebox.showwarning("Warning","Product path contained no images.")
             return
         else:
-            # load_bn['state']= 'disabled'
+            load_bn['state']= 'disabled'
             ask_loc()
+
 
 # ROOT Path selection buttons and labels
 logo_bn = tki.Button(root, text="Select Logo",command=choose_logo)
