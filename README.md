@@ -8,6 +8,8 @@ A Python program for Windows (10 only I think) to add a logo file to a picture.
 
 I know this isn't very good code, deal with it.
 
+I leave issues for my future self
+
 Copyright (C) 2019 Patrick Maloney
 
   This program is free software: you can redistribute it and/or modify
