@@ -3,3 +3,4 @@ pathlib
 PIL
 time
 PrintTags
+PySimpleGUI
