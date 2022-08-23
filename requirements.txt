@@ -1,5 +1,0 @@
-tkinter
-pathlib
-PIL
-time
-PrintTags
