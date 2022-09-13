@@ -51,4 +51,3 @@ class Overlay:
 
         image.save(save_path)
         return save_path
-
