@@ -4,21 +4,9 @@ from pathlib import Path
 from datetime import datetime
 from uuid import uuid4
 
-@dataclass
-class ImageTasks:
-    # might need to make a more granular one where
-    # the image, logo, and position are their own class
-    # to allow for independent logos and positions for each image
-    image_paths: List[str],
-    logo_path: str,
-    save_dir: str,
-    save_name: str,
-    position: Tuple[int, int]
-
-
 
 @dataclass
-class Image:
+class ImageData:
     image_path: str
     logo_path: str
     position: Tuple[int, int]
