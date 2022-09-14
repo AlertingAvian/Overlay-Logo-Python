@@ -19,7 +19,7 @@ class ImageData:
         patterns = {
             r'%F': Path(self.image_path).stem,
             r'%UUID': str(uuid4()),
-            r'%DD': str(now.day),
+            r'%DD': str(now.day) if len(str(now.day)) == 2 else "0" + str(now.day),
             r'%MM': str(now.month) if len(str(now.month)) == 2 else "0" + str(now.month),
             r'%YYYY': str(now.year)
         }
@@ -29,4 +29,3 @@ class ImageData:
             fname = replace(pattern, result)
         
         return str(Path(self.save_dir) / Path(fname))
-    
