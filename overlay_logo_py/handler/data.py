@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from sys import path
 from typing import List, Tuple
 from pathlib import Path
 from datetime import datetime
