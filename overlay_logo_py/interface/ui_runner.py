@@ -6,7 +6,7 @@ sg.theme("DarkGrey1")
 
 class OverlayUI:
     @staticmethod
-    def start_event_loop(debug: bool = False):
+    def start_event_loop(queue, debug: bool = False):
         
         window = sg.Window('Overlay Logo', ui.Layouts.layout)
 
