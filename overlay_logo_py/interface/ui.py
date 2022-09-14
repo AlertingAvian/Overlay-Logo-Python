@@ -4,7 +4,9 @@ class Layouts:
     layout_settings = [
             [sg.Text("Images:"), sg.InputText(key="image_paths"), sg.FilesBrowse()],
             [sg.Text("Logo:"), sg.InputText(key="logo_path"), sg.FileBrowse()],
-            [sg.Text("Save Path:"), sg.InputText(key="save_path"), sg.FolderBrowse()],
+            [sg.Text("Save Directory:"), sg.InputText(key="save_path"), sg.FolderBrowse()],
+            [sg.Text("Save Pattern:"), sg.InputText(key="save_pattern"), sg.Button('Apply', key='apply-pattern')],
+            [sg.Text("--Pattern information here--")] # somthings like %DD for day %MM for month %YYYY for year etc.
             # need selection for logo location
     ]
     tab_settings = [
