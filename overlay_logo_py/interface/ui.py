@@ -6,7 +6,7 @@ class Layouts:
             [sg.Text("Logo:"), sg.InputText(key="logo_path"), sg.FileBrowse()],
             [sg.Text("Save Directory:"), sg.InputText(key="save_path"), sg.FolderBrowse()],
             [sg.Text("Save Pattern:"), sg.InputText(key="save_pattern"), sg.Button('Apply', key='apply-pattern')],
-            [sg.Text("--Pattern information here--")] # somthings like %DD for day %MM for month %YYYY for year etc.
+            [sg.Text("--Pattern information here--")]  # see data.py for pattern
             # need selection for logo location
     ]
     tab_settings = [
