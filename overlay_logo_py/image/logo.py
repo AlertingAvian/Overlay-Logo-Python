@@ -1,6 +1,7 @@
+from typing import Tuple
+
 import PIL
 from PIL import Image
-from typing import Tuple
 
 
 class Overlay:
@@ -39,9 +40,9 @@ class Overlay:
         # make sure position is in image
         bounds = image.size
         position_br = (position[0] + logo.size[0], position[1] + logo.size[1])
-        if not position[0] in range(bounds[0]+1) or not position[1] in range(bounds[1]+1):
+        if not position[0] in range(bounds[0] + 1) or not position[1] in range(bounds[1] + 1):
             raise ValueError(f'Specified position: {position} out of bounds: {bounds}')
-        if not position_br[0] in range(bounds[0]+1) or not position_br[1] in range(bounds[1]+1):
+        if not position_br[0] in range(bounds[0] + 1) or not position_br[1] in range(bounds[1] + 1):
             raise ValueError(f'Specified position bottom right: {position_br} out of bounds: {bounds}')
         del bounds
 

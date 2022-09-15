@@ -1,7 +1,7 @@
 from dataclasses import dataclass
-from typing import List, Tuple
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+from typing import Tuple
 from uuid import uuid4
 
 
@@ -18,14 +18,18 @@ class ImageData:
         now = datetime.now()
         patterns = {
             r'%F': Path(self.image_path).stem,
+            r'%L': Path(self.logo_path).stem,
             r'%UUID': str(uuid4()),
             r'%DD': str(now.day) if len(str(now.day)) == 2 else "0" + str(now.day),
             r'%MM': str(now.month) if len(str(now.month)) == 2 else "0" + str(now.month),
             r'%YYYY': str(now.year)
         }
 
-        fname = self.save_pattern
+        file_name = self.save_pattern
         for pattern, result in patterns.items():
-            fname = replace(pattern, result)
-        
-        return str(Path(self.save_dir) / Path(fname))
+            file_name = file_name.replace(pattern, result)
+
+        return str(Path(self.save_dir) / Path(file_name))
+
+
+ExitEvent = object()
