@@ -1,24 +1,30 @@
 # Overlay-Logo-Python
-A Python program for Windows (10 only I think) to add a logo file to a picture.
+A Python program to add a logo file to a picture.
 
-- [x] Added a GUI
-- [x] Fix image loading [issue](https://github.com/AlertingAvian/Overlay-Logo-Python/issues/2)
+## Report issues here: [https://github.com/AlertingAvian/Overlay-Logo-Python/issues](https://github.com/AlertingAvian/Overlay-Logo-Python/issues)
+I will try to fix them as soon as possible.
 
-### Read the [wiki](https://github.com/AlertingAvian/Overlay-Logo-Python/wiki) for information
-
-I know this isn't very good code, deal with it.
-
-I leave issues for my future self
-
-Copyright (C) 2020 Patrick Maloney
-
-  This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+## How to use
+#### 1. Clone the repository
+```
+git clone https://github.com/AlertingAvian/Overlay-Logo-Python.git
+```
+### 2. Install the dependencies
+(I generally recommend the use of a virtual environment)
+```
+python3 -m pip install -r requirements.txt
+```
+### 3. Run the program
+```
+python3 ./overlay_logo_py/
+```
+### 4. Input information
+- Select all of the images to apply a logo to
+- Select the logo to be applied to the images
+- Select the folder to save the images to. Note: DO NOT select a folder containing either the images or logo.
+- Pick a pattern for the save names of your images
+- Pick an anchor for the logo
+### 5. Run
+- Go to the run tab
+- Click Run
+- Wait for the progress bar to finish
