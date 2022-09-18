@@ -44,7 +44,6 @@ class OverlayUI:
 
             if event in (None, 'Exit'):
                 logger.debug('Exiting')
-                self.out_queue.put(data.ExitEvent)
                 break
             elif event == 'graph':
                 graph_position = values['graph']
@@ -74,6 +73,7 @@ class OverlayUI:
                     image_list.append(data.ImageData(i, logo_path, ratio, save_dir, save_pattern))
                 self.out_queue.put(image_list)
 
+        self.out_queue.put(data.ExitEvent)
         self.window.close()
 
     def update_progress(self, progress):
