@@ -15,10 +15,11 @@ class Overlay:
         except Exception as e:
             if isinstance(e, FileNotFoundError) or isinstance(e, PIL.UnidentifiedImageError):
                 # file doesn't exist or isn't an image
-                print(f'Unable to find image at specified path -> {e}')
+                logger.warning(f'Unable to find image at specified path -> {e}')
                 raise e
             else:
                 # other error, have to raise it myself because I didn't specify which error to catch.
+                logger.error(e)
                 raise e
         else:
             return image

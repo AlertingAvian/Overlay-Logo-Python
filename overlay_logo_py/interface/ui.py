@@ -29,7 +29,9 @@ class Layouts:
     layout_run = [
         [sg.Button('Run', key="run_overlay")],
         [sg.ProgressBar(100, orientation='h', size=(45, 20), key='bar')],
-        [sg.Text('If there are missing files check the log, a logo image may have been to large.',
+        [sg.Text('If there are missing files check the log, a logo image may have been to large',
+                 background_color='red', text_color='white')],
+        [sg.Text('or a file was unable to be opened.',
                  background_color='red', text_color='white')]
     ]
     tab_run = [
